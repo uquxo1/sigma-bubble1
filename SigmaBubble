@@ -17,14 +17,14 @@ _G.autoGiantChest = true
 function autoGum()
 while _G.autoGum == true do
 game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("BlowBubble")
-wait(.01)
+wait(.001)
 end
 end
 
 function autoSellGum()
 while _G.autoSellGum == true do
 game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("SellBubble")
-wait(.01)
+wait(.001)
 end
 end
 
