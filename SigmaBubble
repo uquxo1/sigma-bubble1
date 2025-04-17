@@ -9,8 +9,6 @@ _G.autoHatch = true
 _G.autoMultiHatch = true
 _G.selectEgg = "Common Egg"
 _G.autoEquipBest = true
-_G.autoVoidChest = true
-_G.autoGiantChest = true
 _G.autoPlaytime = true
 
 
