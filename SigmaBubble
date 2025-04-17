@@ -31,7 +31,7 @@ end
 function autoHatch()
  while _G.autoHatch == true do
       game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("HatchEgg",_G.selectEgg,1)
-      wait(1)
+      wait(.01)
       end
 end
 
