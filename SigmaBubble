@@ -65,28 +65,14 @@ end
 end
 
 function autoPlaytime()
-while _G.autoPlaytime == true do
-if _G.autoPlaytime == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",1)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",1) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",2)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",2) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",3)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",3) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",4)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",4) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",5)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",5) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",6)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",6) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",7)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",7) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",8)
-elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",8) == true then
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",9)
-wait(.01)
-end
-end
+    while _G.autoPlaytime == true do
+        for i = 1, 9 do
+            if not _G.autoPlaytime then break end
+            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime", i)
+            wait(0.1)
+        end
+        wait(1)
+    end
 end
 
 
