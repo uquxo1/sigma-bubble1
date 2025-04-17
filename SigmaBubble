@@ -50,20 +50,6 @@ wait(30)
 end
 end
 
-function autoGiantChest()
-while _G.autoGiantChest == true do
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("ClaimChest","Giant Chest")
-wait(900)
-end
-end
-
-function autoVoidChest()
-while _G.autoVoidChest == true do
-game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("ClaimChest","Void Chest")
-wait(2400)
-end
-end
-
 function autoPlaytime()
     while _G.autoPlaytime == true do
         for i = 1, 9 do
@@ -169,6 +155,8 @@ MiscTab:AddToggle({
         autoEquipBest()
 	end    
 })
+
+
 
 -- Dropdown
 
