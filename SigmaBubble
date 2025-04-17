@@ -11,6 +11,7 @@ _G.selectEgg = "Common Egg"
 _G.autoEquipBest = true
 _G.autoVoidChest = true
 _G.autoGiantChest = true
+_G.autoPlaytime = true
 
 
 -- Functions
@@ -63,7 +64,30 @@ wait(2400)
 end
 end
 
-
+function autoPlaytime()
+while _G.autoPlaytime == true do
+if _G.autoPlaytime == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",1)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",1) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",2)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",2) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",3)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",3) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",4)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",4) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",5)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",5) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",6)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",6) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",7)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",7) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",8)
+elseif game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",8) == true then
+game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Function:InvokeServer("ClaimPlaytime",9)
+wait(.01)
+end
+end
+end
 
 
 
@@ -117,24 +141,15 @@ FarmTab:AddToggle({
 })
 
 local Section = FarmTab:AddSection({
-	Name = "📦 Auto Open Chests"
+	Name = "📦 Auto Collect"
 })
 
 FarmTab:AddToggle({
-	Name = "Auto Giant Chest",
+	Name = "Auto Playtime",
 	Default = false,
 	Callback = function(Value)
-		_G.autoGiantChest = Value
-		autoGiantChest()
-	end    
-})
-
-FarmTab:AddToggle({
-	Name = "Auto Void Chest",
-	Default = false,
-	Callback = function(Value)
-		_G.autoVoidChest = Value
-		autoVoidChest()
+		_G.autoPlaytime = Value
+		autoPlaytime()
 	end    
 })
 
